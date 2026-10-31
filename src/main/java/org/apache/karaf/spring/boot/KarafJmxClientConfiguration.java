@@ -27,73 +27,73 @@ public class KarafJmxClientConfiguration implements ApplicationContextAware {
 	private ApplicationContext applicationContext;
 	
 	
-	/*
-    @ConditionalOnMissingBean
-    //@ConditionalOnClass(org.owasp.csrfguard.CsrfGuard.class)
-	/**
-	 * <p>Java script servlet.</p>
-	 * @param properties the properties
-	 * @return the servlet registration bean< java script servlet>
-	 * @throws Exception if an error occurs
-	 */
-	public ServletRegistrationBean<JavaScriptServlet> javaScriptServlet(KarafClientProperties properties) throws Exception {
-
-		ServletRegistrationBean<JavaScriptServlet> registrationBean = new ServletRegistrationBean<JavaScriptServlet>();
-        
-		JavaScriptServlet javaScriptServlet = new JavaScriptServlet();
-		
-		registrationBean.setServlet(javaScriptServlet);
-		
-		// Default parameters
-		CsrfguardJavascriptServletProperties javascript = properties.getJavascript();
-		registrationBean.addInitParameter("cache-control", javascript.getCacheControl());
-		registrationBean.addInitParameter("domain-strict", Boolean.toString(javascript.isDomainStrict()));
-		registrationBean.addInitParameter("inject-into-attributes", Boolean.toString(javascript.isInjectIntoAttributes()));
-		registrationBean.addInitParameter("inject-get-forms", Boolean.toString(javascript.isInjectGetForms()));
-		registrationBean.addInitParameter("inject-form-attributes", Boolean.toString(javascript.isInjectFormAttributes()));
-		registrationBean.addInitParameter("inject-into-forms", Boolean.toString(javascript.isInjectIntoForms()));
-		registrationBean.addInitParameter("referer-pattern", javascript.getRefererPattern());
-		registrationBean.addInitParameter("referer-match-domain", Boolean.toString(javascript.isRefererMatchDomain()));
-		registrationBean.addInitParameter("source-file", javascript.getSourceFile());
-		registrationBean.addInitParameter("x-requested-with", javascript.getXRequestedWith());
-		registrationBean.addUrlMappings(javascript.getPattern());
-
-        return registrationBean;
-    }
-	/**
-	 * <p>Csrf guard http session listener.</p>
-	 * @return the servlet listener registration bean< csrf guard http session listener>
-	 */
-	
-	@Bean
-	@ConditionalOnMissingBean
-	protected ServletListenerRegistrationBean<CsrfGuardHttpSessionListener> csrfGuardHttpSessionListener()
-			throws Exception {
-
-		ServletListenerRegistrationBean<CsrfGuardHttpSessionListener> registrationBean = new ServletListenerRegistrationBean<CsrfGuardHttpSessionListener>();
-		registrationBean.setListener(new CsrfGuardHttpSessionListener());
-		registrationBean.setOrder(Integer.MIN_VALUE);
-
-		return registrationBean;
-	}
-    /**
-     * <p>Csrf guard filter.</p>
-     * @return the filter registration bean< csrf guard filter>
-     * @throws Exception if an error occurs
-     */
-	
-	
-	@Bean
-    @ConditionalOnMissingBean
-    protected FilterRegistrationBean<CsrfGuardFilter> csrfGuardFilter() throws Exception {
-
-        FilterRegistrationBean<CsrfGuardFilter> filterRegistrationBean = new FilterRegistrationBean<CsrfGuardFilter>();
-        filterRegistrationBean.setFilter(new CsrfGuardFilter());
-        filterRegistrationBean.setOrder(Integer.MIN_VALUE);
-        
-        return filterRegistrationBean;
-    }
-	*/
+// 	/*
+//     @ConditionalOnMissingBean
+//     //@ConditionalOnClass(org.owasp.csrfguard.CsrfGuard.class)
+// 	/**
+// 	 * <p>Java script servlet.</p>
+// 	 * @param properties the properties
+// 	 * @return the servlet registration bean< java script servlet>
+// 	 * @throws Exception if an error occurs
+// 	 */
+// 	public ServletRegistrationBean<JavaScriptServlet> javaScriptServlet(KarafClientProperties properties) throws Exception {
+// 
+// 		ServletRegistrationBean<JavaScriptServlet> registrationBean = new ServletRegistrationBean<JavaScriptServlet>();
+//         
+// 		JavaScriptServlet javaScriptServlet = new JavaScriptServlet();
+// 		
+// 		registrationBean.setServlet(javaScriptServlet);
+// 		
+// 		// Default parameters
+// 		CsrfguardJavascriptServletProperties javascript = properties.getJavascript();
+// 		registrationBean.addInitParameter("cache-control", javascript.getCacheControl());
+// 		registrationBean.addInitParameter("domain-strict", Boolean.toString(javascript.isDomainStrict()));
+// 		registrationBean.addInitParameter("inject-into-attributes", Boolean.toString(javascript.isInjectIntoAttributes()));
+// 		registrationBean.addInitParameter("inject-get-forms", Boolean.toString(javascript.isInjectGetForms()));
+// 		registrationBean.addInitParameter("inject-form-attributes", Boolean.toString(javascript.isInjectFormAttributes()));
+// 		registrationBean.addInitParameter("inject-into-forms", Boolean.toString(javascript.isInjectIntoForms()));
+// 		registrationBean.addInitParameter("referer-pattern", javascript.getRefererPattern());
+// 		registrationBean.addInitParameter("referer-match-domain", Boolean.toString(javascript.isRefererMatchDomain()));
+// 		registrationBean.addInitParameter("source-file", javascript.getSourceFile());
+// 		registrationBean.addInitParameter("x-requested-with", javascript.getXRequestedWith());
+// 		registrationBean.addUrlMappings(javascript.getPattern());
+// 
+//         return registrationBean;
+//     }
+// 	/**
+// 	 * <p>Csrf guard http session listener.</p>
+// 	 * @return the servlet listener registration bean< csrf guard http session listener>
+// 	 */
+// 	
+// 	@Bean
+// 	@ConditionalOnMissingBean
+// 	protected ServletListenerRegistrationBean<CsrfGuardHttpSessionListener> csrfGuardHttpSessionListener()
+// 			throws Exception {
+// 
+// 		ServletListenerRegistrationBean<CsrfGuardHttpSessionListener> registrationBean = new ServletListenerRegistrationBean<CsrfGuardHttpSessionListener>();
+// 		registrationBean.setListener(new CsrfGuardHttpSessionListener());
+// 		registrationBean.setOrder(Integer.MIN_VALUE);
+// 
+// 		return registrationBean;
+// 	}
+//     /**
+//      * <p>Csrf guard filter.</p>
+//      * @return the filter registration bean< csrf guard filter>
+//      * @throws Exception if an error occurs
+//      */
+// 	
+// 	
+// 	@Bean
+//     @ConditionalOnMissingBean
+//     protected FilterRegistrationBean<CsrfGuardFilter> csrfGuardFilter() throws Exception {
+// 
+//         FilterRegistrationBean<CsrfGuardFilter> filterRegistrationBean = new FilterRegistrationBean<CsrfGuardFilter>();
+//         filterRegistrationBean.setFilter(new CsrfGuardFilter());
+//         filterRegistrationBean.setOrder(Integer.MIN_VALUE);
+//         
+//         return filterRegistrationBean;
+//     }
+// 	*/
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
